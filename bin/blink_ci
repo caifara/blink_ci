@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+begin
+  require "blink_ci"
+
+  blink_ci = BlinkCi.new
+  blink_ci.start
+rescue LoadError => e
+  $stderr.puts "BlinkCi could not be loaded"
+  $stderr.puts e
+  exit 1
+end
+
